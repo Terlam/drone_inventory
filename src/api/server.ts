@@ -1,4 +1,4 @@
- let token = '1df56e4ad676565efdace718720fe75eb54d2bfc3abbb106'
+ let token = '' // 👈🏾 Insert Token Here
 
 export const server_calls = {
     get: async () => {
