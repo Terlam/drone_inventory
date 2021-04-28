@@ -4,17 +4,30 @@ import './styles.css';
 import { Home, Dashboard, SignIn } from './components';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store = { store }>
+
     <Router>
       <Switch>
+    
         <Route exact path='/'>
           <Home title={'Drone Inventory'}></Home>
         </Route>
-        <Route path='/dashboard' component={Dashboard}></Route>
-        <Route path='/signin' component={SignIn}></Route>
+    
+        <Route path='/dashboard' component={Dashboard}>
+        </Route>
+
+        <Route path='/signin' component={SignIn}>
+        </Route>
+        
       </Switch>
     </Router>
+
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
